@@ -15,17 +15,15 @@ self.addEventListener('activate', e => {
 });
 
 self.addEventListener('fetch', e => {
-  let path = new URL(e.request.url).pathname;
-  console.log(path);
-  if (path === '/test') {
-    e.respondWith(new Response('test'));
-  }
-  if (path === '/test2') {
-    e.respondWith(new Response('test2'));
-  }
-  return;
+  // Persistence
+  saveRequest(e.request); // 的な関数
+  self.addEventListener('sync', e => {
+    fetch(getRequest(e.request)); // Persistence したものを取り出す
+  });
+
+  e.respondWith(/*dummy*/);
 });
 
-// self.addEventListener('push', () => {
-//   self.registration.update();
-// });
+self.addEventListener('sync', e => {
+  console.log('sync', e);
+});
