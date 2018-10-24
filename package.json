@@ -1,0 +1,24 @@
+{
+  "name": "service-worker",
+  "version": "0.0.1",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --mode development",
+    "test": "yarn lint:js",
+    "lint:js": "tslint ./src/**/*.{ts,tsx}"
+  },
+  "dependencies": {
+    "awesome-typescript-loader": "^5.2.1",
+    "html-webpack-plugin": "^3.2.0",
+    "typescript": "^3.1.3",
+    "webpack": "^4.22.0",
+    "webpack-cli": "^3.1.2"
+  },
+  "devDependencies": {
+    "prettier": "^1.14.3",
+    "tslint": "^5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "webpack-dev-server": "^3.1.10"
+  }
+}
