@@ -1,6 +1,6 @@
 console.info('worker');
 
-const ver = 2;
+const ver = 3;
 
 self.addEventListener('install', e => {
   // db/cache new schema ready
@@ -25,3 +25,7 @@ self.addEventListener('fetch', e => {
   }
   return;
 });
+
+// self.addEventListener('push', () => {
+//   self.registration.update();
+// });
