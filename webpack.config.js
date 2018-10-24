@@ -5,20 +5,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   resolve: {
     modules: ['node_modules'],
-    extensions: ['.ts', '.tsx', '.js'],
+    extensions: ['.js'],
     descriptionFiles: ['package.json'],
-  },
-  module: {
-    rules: [
-      {
-        test: /\.ts|.tsx$/,
-        use: 'awesome-typescript-loader',
-      }
-    ],
   },
   devtool: 'inline-source-map',
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
     new webpack.LoaderOptionsPlugin({
       debug: true,
       minimize: false,
@@ -32,11 +24,11 @@ module.exports = {
   ],
   devServer: {
     host: '0.0.0.0',
-    hot: true,
+    // hot: true,
     port: 5000,
     inline: true,
     contentBase: path.join(__dirname, 'src'),
-    watchContentBase: true,
-    disableHostCheck: true,
+    // watchContentBase: true,
+    // disableHostCheck: true,
   },
 };
